@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUBUR MAKMUR Agriculture & Cattle - Toko Pertanian & Peternakan Terlengkap</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        agri: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                            dark: '#0a3818'
+                        },
+                        soil: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            500: '#f59e0b',
+                            800: '#92400e',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #16a34a;
+            border-radius: 4px;
+        }
+        .badge-cart {
+            animation: pulse 1.5s infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-agri-900 text-amber-300 text-xs py-2 px-4 text-center font-medium flex justify-between items-center max-w-full overflow-hidden">
+        <div class="hidden md:flex items-center space-x-4 mx-auto">
+            <span><i class="fa-solid fa-wheat-awn mr-1"></i> Selamat Datang di Portal Resmi SUBUR MAKMUR Agriculture & Cattle</span>
+            <span>|</span>
+            <span><i class="fa-solid fa-truck-fast mr-1"></i> Siap Kirim Ke Seluruh Wilayah Indonesia</span>
+            <span>|</span>
+            <span><i class="fa-solid fa-phone mr-1"></i> Layanan Konsultasi Gratis Petani & Peternak</span>
+        </div>
+        <div class="md:hidden w-full text-center">
+            <span><i class="fa-solid fa-leaf mr-1"></i> Solusi Terpercaya Pertanian & Peternakan Anda</span>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="showSection('home')">
+                    <div class="w-12 h-12 bg-agri-700 rounded-full flex items-center justify-center text-white shadow-lg text-2xl font-bold border-2 border-amber-400">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl sm:text-2xl font-extrabold text-agri-900 tracking-tight block leading-tight">SUBUR MAKMUR</span>
+                        <span class="text-xs font-semibold text-amber-600 tracking-widest block uppercase">Agriculture & Cattle</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden lg:flex items-center space-x-1 font-semibold text-sm text-gray-700">
+                    <button onclick="showSection('home')" class="nav-btn px-3 py-2 rounded-lg hover:bg-agri-50 hover:text-agri-700 transition">Beranda</button>
+                    
+                    <!-- Dropdown Hulu -->
+                    <div class="relative group">
+                        <button class="nav-btn px-3 py-2 rounded-lg hover:bg-agri-50 hover:text-agri-700 transition flex items-center">
+                            Sarana Produksi Hulu <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute left-0 top-full mt-1 w-64 bg-white rounded-xl shadow-xl border border-gray-100 hidden group-hover:block p-2 z-50">
+                            <a href="#" onclick="filterCatalog('all', 'hulu'); showSection('katalog');" class="block px-4 py-2 text-xs font-bold text-gray-400 uppercase tracking-wider">Semua Produk Hulu</a>
+                            <a href="#" onclick="filterCatalog('benih', 'hulu'); showSection('katalog');" class="block px-4 py-2 hover:bg-agri-50 rounded-lg text-gray-700 hover:text-agri-700"><i class="fa-solid fa-seedling text-agri-600 w-5"></i> Benih & Bibit Pertanian</a>
+                            <a href="#" onclick="filterCatalog('herbisida', 'hulu'); showSection('katalog');" class="block px-4 py-2 hover:bg-agri-50 rounded-lg text-gray-700 hover:text-agri-700"><i class="fa-solid fa-flask text-agri-600 w-5"></i> Obat Pertanian (Herbisida)</a>
+                            <a href="#" onclick="filterCatalog('pestisida', 'hulu'); showSection('katalog');" class="block px-4 py-2 hover:bg-agri-50 rounded-lg text-gray-700 hover:text-agri-700"><i class="fa-solid fa-bugs text-agri-600 w-5"></i> Insektisida & Fungisida</a>
+                            <a href="#" onclick="filterCatalog('pupuk', 'hulu'); showSection('katalog');" class="block px-4 py-2 hover:bg-agri-50 rounded-lg text-gray-700 hover:text-agri-700"><i class="fa-solid fa-jar text-agri-600 w-5"></i> Pupuk, ZPT & Molase</a>
+                            <a href="#" onclick="filterCatalog('lainnya', 'hulu'); showSection('katalog');" class="block px-4 py-2 hover:bg-agri-50 rounded-lg text-gray-700 hover:text-agri-700"><i class="fa-solid fa-box text-agri-600 w-5"></i> Perlengkapan Lainnya</a>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown Hilir -->
+                    <div class="relative group">
+                        <button class="nav-btn px-3 py-2 rounded-lg hover:bg-agri-50 hover:text-agri-700 transition flex items-center">
+                            Hasil Tani & Ternak Hilir <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute left-0 top-full mt-1 w-56 bg-white rounded-xl shadow-xl border border-gray-100 hidden group-hover:block p-2 z-50">
+                            <a href="#" onclick="showSection('hilir-padi')" class="block px-4 py-2 hover:bg-agri-50 rounded-lg text-gray-700 hover:text-agri-700"><i class="fa-solid fa-wheat-awn text-amber-600 w-5"></i> Jual / Beli Padi & Jagung</a>
+                            <a href="#" onclick="showSection('hilir-ternak')" class="block px-4 py-2 hover:bg-agri-50 rounded-lg text-gray-700 hover:text-agri-700"><i class="fa-solid fa-cow text-amber-700 w-5"></i> Jual / Beli Sapi & Kambing</a>
+                        </div>
+                    </div>
+
+                    <button onclick="showSection('edukasi')" class="nav-btn px-3 py-2 rounded-lg hover:bg-agri-50 hover:text-agri-700 transition">Pusat Edukasi & Tutorial</button>
+                    <button onclick="showSection('tentang')" class="nav-btn px-3 py-2 rounded-lg hover:bg-agri-50 hover:text-agri-700 transition">Tentang Kami</button>
+                </nav>
+
+                <!-- Header Actions (Cart & Mobile Menu Button) -->
+                <div class="flex items-center space-x-3">
+                    <button onclick="toggleCartDrawer()" class="relative p-2.5 bg-agri-50 text-agri-800 rounded-xl hover:bg-agri-100 transition flex items-center justify-center">
+                        <i class="fa-solid fa-cart-shopping text-xl"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-red-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center border-2 border-white">0</span>
+                    </button>
+                    <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-gray-600 hover:text-gray-900 rounded-lg focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-4 space-y-2">
+            <button onclick="showSection('home'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-md font-semibold text-gray-700 hover:bg-agri-50">Beranda</button>
+            <div class="pl-2 border-l-2 border-agri-500 my-1 space-y-1">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block px-2">1. Sarana Produksi Hulu</span>
+                <button onclick="filterCatalog('all', 'hulu'); showSection('katalog'); toggleMobileMenu();" class="block w-full text-left px-3 py-1.5 text-sm text-gray-600 hover:text-agri-700">Katalog Semua Obat & Benih</button>
+            </div>
+            <div class="pl-2 border-l-2 border-amber-500 my-1 space-y-1">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block px-2">2. Hasil Tani & Ternak Hilir</span>
+                <button onclick="showSection('hilir-padi'); toggleMobileMenu();" class="block w-full text-left px-3 py-1.5 text-sm text-gray-600 hover:text-agri-700">Jual / Beli Padi & Jagung</button>
+                <button onclick="showSection('hilir-ternak'); toggleMobileMenu();" class="block w-full text-left px-3 py-1.5 text-sm text-gray-600 hover:text-agri-700">Jual / Beli Sapi & Kambing</button>
+            </div>
+            <button onclick="showSection('edukasi'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-md font-semibold text-gray-700 hover:bg-agri-50">3. Pusat Edukasi & Tutorial</button>
+            <button onclick="showSection('tentang'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-md font-semibold text-gray-700 hover:bg-agri-50">4. Tentang Kami & Kontak</button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="flex-grow">
+
+        <!-- ================= SECTION 1: BERANDA ================= -->
+        <section id="sec-home" class="space-y-12 pb-12">
+            <!-- Hero Banner -->
+            <div class="relative bg-gradient-to-r from-agri-900 via-agri-800 to-agri-700 text-white py-16 md:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                <div class="max-w-7xl mx-auto relative z-10 grid md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6 text-center md:text-left">
+                        <span class="inline-block bg-amber-400 text-agri-900 font-extrabold text-xs uppercase px-3 py-1 rounded-full shadow-md">
+                            <i class="fa-solid fa-circle-check mr-1"></i> Toko Pertanian & Peternakan Resmi
+                        </span>
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight">
+                            Mitra Utama Sukses <span class="text-amber-300">Petani & Peternak</span> Indonesia
+                        </h1>
+                        <p class="text-agri-100 text-sm sm:text-base leading-relaxed">
+                            Menyediakan Benih Unggul Original, Herbisida, Insektisida, Fungisida, Pupuk Berkualitas, hingga Layanan Transaksi Jual-Beli Hasil Tani & Ternak Terpercaya.
+                        </p>
+                        <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
+                            <button onclick="showSection('katalog')" class="bg-amber-400 hover:bg-amber-300 text-agri-900 font-bold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition flex items-center">
+                                <i class="fa-solid fa-store mr-2"></i> Belanja Sarana Hulu
+                            </button>
+                            <button onclick="showSection('hilir-padi')" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-xl border border-white/30 backdrop-blur-sm transition flex items-center">
+                                <i class="fa-solid fa-handshake mr-2"></i> Jual/Beli Hasil Tani & Ternak
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex justify-center">
+                        <div class="relative w-full max-w-md">
+                            <div class="w-full h-80 bg-gradient-to-tr from-amber-400/20 to-agri-500/30 rounded-3xl backdrop-blur-md p-6 border border-white/20 flex flex-col justify-between shadow-2xl">
+                                <div class="flex items-center space-x-4 bg-white/90 text-gray-800 p-3 rounded-2xl shadow-md">
+                                    <div class="w-12 h-12 bg-agri-600 rounded-xl flex items-center justify-center text-white text-xl">
+                                        <i class="fa-solid fa-wheat-awn"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-sm">Benih & Obat Asli 100%</h4>
+                                        <p class="text-xs text-gray-500">Jaminan Kualitas Pabrik Original</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4 bg-white/90 text-gray-800 p-3 rounded-2xl shadow-md ml-6">
+                                    <div class="w-12 h-12 bg-amber-600 rounded-xl flex items-center justify-center text-white text-xl">
+                                        <i class="fa-solid fa-cow"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-sm">Ternak & Pakan Berkualitas</h4>
+                                        <p class="text-xs text-gray-500">Sapi, Kambing & Molase Fermentasi</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4 bg-white/90 text-gray-800 p-3 rounded-2xl shadow-md">
+                                    <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white text-xl">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-sm">Pesan Langsung via WA</h4>
+                                        <p class="text-xs text-gray-500">Proses Cepat & Pelayanan Ramah</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Access Flow Categories -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <h2 class="text-2xl font-extrabold text-agri-900">Layanan Lengkap Subur Makmur</h2>
+                    <p class="text-gray-600 text-sm mt-1">Pilih kategori sesuai dengan kebutuhan usaha tani dan ternak Anda</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Hulu -->
+                    <div onclick="filterCatalog('all', 'hulu'); showSection('katalog');" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-agri-500 transition cursor-pointer group">
+                        <div class="w-14 h-14 bg-agri-100 group-hover:bg-agri-600 text-agri-700 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl transition mb-4">
+                            <i class="fa-solid fa-boxes-packing"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-agri-700">1. Sarana Produksi Hulu</h3>
+                        <p class="text-xs text-gray-500 mt-2 leading-relaxed">Benih unggul, obat pertanian (Herbisida, Fungisida), pupuk, ZPT, & pakan ternak.</p>
+                        <span class="inline-flex items-center text-xs font-bold text-agri-600 mt-4 group-hover:translate-x-1 transition">Lihat Katalog <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                    </div>
+
+                    <!-- Hilir -->
+                    <div onclick="showSection('hilir-padi')" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber-500 transition cursor-pointer group">
+                        <div class="w-14 h-14 bg-amber-100 group-hover:bg-amber-600 text-amber-700 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl transition mb-4">
+                            <i class="fa-solid fa-wheat-awn"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-amber-700">2. Hasil Tani & Ternak Hilir</h3>
+                        <p class="text-xs text-gray-500 mt-2 leading-relaxed">Layanan jual & beli hasil panen Padi, Jagung, serta ternak Sapi & Kambing.</p>
+                        <span class="inline-flex items-center text-xs font-bold text-amber-600 mt-4 group-hover:translate-x-1 transition">Jual / Beli Sekarang <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                    </div>
+
+                    <!-- Edukasi -->
+                    <div onclick="showSection('edukasi')" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-blue-500 transition cursor-pointer group">
+                        <div class="w-14 h-14 bg-blue-100 group-hover:bg-blue-600 text-blue-700 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl transition mb-4">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-700">3. Pusat Edukasi & Tips</h3>
+                        <p class="text-xs text-gray-500 mt-2 leading-relaxed">Panduan aplikasi obat, tips pemeliharaan ternak, dan artikel pertanian praktis.</p>
+                        <span class="inline-flex items-center text-xs font-bold text-blue-600 mt-4 group-hover:translate-x-1 transition">Pelajari Tutorial <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                    </div>
+
+                    <!-- Tentang -->
+                    <div onclick="showSection('tentang')" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-emerald-500 transition cursor-pointer group">
+                        <div class="w-14 h-14 bg-emerald-100 group-hover:bg-emerald-600 text-emerald-700 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl transition mb-4">
+                            <i class="fa-solid fa-building-user"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-emerald-700">4. Tentang Kami & Kontak</h3>
+                        <p class="text-xs text-gray-500 mt-2 leading-relaxed">Informasi toko, lokasi fisik, serta kontak admin via WhatsApp dan Telepon.</p>
+                        <span class="inline-flex items-center text-xs font-bold text-emerald-600 mt-4 group-hover:translate-x-1 transition">Hubungi Kami <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Products Preview -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-end mb-6">
+                    <div>
+                        <h2 class="text-2xl font-extrabold text-agri-900">Produk Unggulan Pilihan Petani</h2>
+                        <p class="text-gray-500 text-sm mt-1">Benih, Herbisida, & Obat Hama Terlaris Minggu Ini</p>
+                    </div>
+                    <button onclick="showSection('katalog')" class="text-agri-700 font-bold hover:underline text-sm flex items-center">
+                        Lihat Semua <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+                <div id="featured-products-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= SECTION 2: KATALOG PRODUK HULU ================= -->
+        <section id="sec-katalog" class="hidden py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <h1 class="text-2xl font-extrabold text-agri-900">Katalog Sarana Produksi Hulu</h1>
+                        <p class="text-sm text-gray-500">Pilih kebutuhan Benih, Herbisida, Pestisida, Pupuk, hingga Produk Rumah Tangga</p>
+                    </div>
+                    <!-- Search bar -->
+                    <div class="relative w-full md:w-72">
+                        <input type="text" id="search-input" oninput="handleSearch()" placeholder="Cari nama produk..." class="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-agri-600 focus:bg-white">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-gray-400"></i>
+                    </div>
+                </div>
+
+                <!-- Category Filters Tabs -->
+                <div class="flex flex-wrap gap-2 mt-6 border-b border-gray-200 pb-4">
+                    <button onclick="filterCatalog('all')" id="btn-cat-all" class="cat-tab-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-agri-700 text-white shadow-sm">
+                        Semua Produk
+                    </button>
+                    <button onclick="filterCatalog('benih')" id="btn-cat-benih" class="cat-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-gray-100 text-gray-600 hover:bg-gray-200">
+                        1. Benih & Bibit
+                    </button>
+                    <button onclick="filterCatalog('herbisida')" id="btn-cat-herbisida" class="cat-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-gray-100 text-gray-600 hover:bg-gray-200">
+                        2. Herbisida
+                    </button>
+                    <button onclick="filterCatalog('pestisida')" id="btn-cat-pestisida" class="cat-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-gray-100 text-gray-600 hover:bg-gray-200">
+                        3. Insektisida & Fungisida
+                    </button>
+                    <button onclick="filterCatalog('pupuk')" id="btn-cat-pupuk" class="cat-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-gray-100 text-gray-600 hover:bg-gray-200">
+                        4. Pupuk & ZPT
+                    </button>
+                    <button onclick="filterCatalog('lainnya')" id="btn-cat-lainnya" class="cat-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-gray-100 text-gray-600 hover:bg-gray-200">
+                        5. Produk Lainnya
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Cards Grid -->
+            <div id="catalog-products-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                <!-- Dynamically Inserted Cards -->
+            </div>
+            
+            <div id="no-product-msg" class="hidden text-center py-16 bg-white rounded-2xl border border-dashed border-gray-300">
+                <i class="fa-solid fa-box-open text-5xl text-gray-300 mb-3"></i>
+                <p class="text-gray-500 font-semibold">Produk tidak ditemukan.</p>
+                <p class="text-xs text-gray-400 mt-1">Coba gunakan kata kunci lain atau pilih kategori lain.</p>
+            </div>
+        </section>
+
+
+        <!-- ================= SECTION 3: HASIL TANI HILIR (PADI & JAGUNG) ================= -->
+        <section id="sec-hilir-padi" class="hidden py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="bg-gradient-to-r from-amber-700 to-amber-900 text-white p-8 rounded-3xl shadow-xl flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="space-y-3">
+                    <span class="bg-amber-400/20 text-amber-300 border border-amber-400/30 text-xs px-3 py-1 rounded-full font-semibold">Layanan Hilir Hasil Tani</span>
+                    <h1 class="text-3xl font-extrabold">Jual & Beli Padi / Jagung</h1>
+                    <p class="text-amber-100 text-sm max-w-xl">Kami menerima hasil panen padi gabah basah/kering serta jagung pipil kualitas terbaik dengan harga pasar bersaing dan penimbangan jujur.</p>
+                </div>
+                <div class="w-full md:w-auto flex flex-col sm:flex-row gap-3">
+                    <a href="#form-tani" class="bg-amber-400 text-amber-950 font-bold px-6 py-3 rounded-xl hover:bg-amber-300 text-center transition">Ajukan Penjualan Panen</a>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Info Pembelian Panen -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-4">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-800 rounded-xl flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">Komoditas yang Kami Layani</h3>
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li class="flex items-start"><i class="fa-solid fa-circle-check text-green-600 mt-1 mr-2"></i> <span><strong>Padi / Gabah (GKP & GKG):</strong> Menerima hasil panen gabah kering panen dan gabah kering giling varietas Mapan 05, Ciherang, Inpari, dll.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-circle-check text-green-600 mt-1 mr-2"></i> <span><strong>Jagung Pipil Kering:</strong> Menerima hasil panen jagung hibrida (Bisi 18, Pioneer P27, Talenta, dll) dengan kadar air terukur.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-circle-check text-green-600 mt-1 mr-2"></i> <span><strong>Sistem Transaksi Transparan:</strong> Penimbangan langsung di lokasi / gudang dengan pembayaran cepat secara tunai/transfer.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Form Pengajuan Jual Hasil Panen -->
+                <div id="form-tani" class="bg-white p-6 rounded-2xl shadow-md border border-amber-200 space-y-4">
+                    <h3 class="text-lg font-bold text-gray-900 flex items-center">
+                        <i class="fa-solid fa-file-pen text-amber-600 mr-2"></i> Form Ajukan Jual Hasil Panen
+                    </h3>
+                    <form onsubmit="submitFormPanen(event)" class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Nama Petani / Pemilik</label>
+                            <input type="text" id="panen-nama" required placeholder="Contoh: Pak Suwito" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 outline-none">
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Jenis Komoditas</label>
+                                <select id="panen-komoditas" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 outline-none">
+                                    <option value="Padi / Gabah Basah">Padi / Gabah Basah</option>
+                                    <option value="Padi / Gabah Kering">Padi / Gabah Kering</option>
+                                    <option value="Jagung Pipil Kering">Jagung Pipil Kering</option>
+                                    <option value="Jagung Manis">Jagung Manis</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Estimasi Jumlah (Kg/Ton)</label>
+                                <input type="text" id="panen-jumlah" required placeholder="Misal: 2 Ton" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 outline-none">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Lokasi Lahan / Panen</label>
+                            <input type="text" id="panen-lokasi" required placeholder="Desa, Kecamatan, Kabupaten" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Nomor WhatsApp / HP</label>
+                            <input type="tel" id="panen-hp" required placeholder="08xxxxxxxxxx" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 outline-none">
+                        </div>
+                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-2.5 rounded-xl transition shadow flex items-center justify-center">
+                            <i class="fa-brands fa-whatsapp text-lg mr-2"></i> Kirim Penawaran via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= SECTION 4: HASIL TERNAK HILIR (SAPI & KAMBING) ================= -->
+        <section id="sec-hilir-ternak" class="hidden py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="bg-gradient-to-r from-emerald-800 to-agri-900 text-white p-8 rounded-3xl shadow-xl flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="space-y-3">
+                    <span class="bg-emerald-400/20 text-emerald-300 border border-emerald-400/30 text-xs px-3 py-1 rounded-full font-semibold">Layanan Peternakan SUBUR MAKMUR</span>
+                    <h1 class="text-3xl font-extrabold">Jual & Beli Sapi & Kambing</h1>
+                    <p class="text-emerald-100 text-sm max-w-xl">Menyediakan ternak sehat untuk qurban, akikah, penggemukan (fattening), dan bibit ternak unggul. Kami juga siap membeli ternak siap potong dari peternak lokal.</p>
+                </div>
+                <div class="w-full md:w-auto">
+                    <a href="#form-ternak" class="bg-emerald-400 text-agri-950 font-bold px-6 py-3 rounded-xl hover:bg-emerald-300 text-center transition block">Hubungi Tim Peternakan</a>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Info Ternak -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-4">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-800 rounded-xl flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-cow"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">Layanan Peternakan Terpadu</h3>
+                    <div class="space-y-4 text-sm text-gray-600">
+                        <div class="p-3 bg-gray-50 rounded-xl border border-gray-100">
+                            <h4 class="font-bold text-emerald-800"><i class="fa-solid fa-check-circle mr-1"></i> Sapi Potong & Bakalan</h4>
+                            <p class="text-xs text-gray-500 mt-1">Sapi Limusin, Simental, Pegon, & PO (Peranakan Ongole) sehat terawat dengan pengawasan medis.</p>
+                        </div>
+                        <div class="p-3 bg-gray-50 rounded-xl border border-gray-100">
+                            <h4 class="font-bold text-emerald-800"><i class="fa-solid fa-check-circle mr-1"></i> Kambing & Domba</h4>
+                            <p class="text-xs text-gray-500 mt-1">Kambing Jawa Randu, PE (Etawa), Domba Garut & lokal untuk aqiqah, qurban, dan ternak.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Jual Beli Ternak -->
+                <div id="form-ternak" class="bg-white p-6 rounded-2xl shadow-md border border-emerald-200 space-y-4">
+                    <h3 class="text-lg font-bold text-gray-900 flex items-center">
+                        <i class="fa-solid fa-clipboard-list text-emerald-600 mr-2"></i> Form Ajukan Transaksi Ternak
+                    </h3>
+                    <form onsubmit="submitFormTernak(event)" class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Tujuan Transaksi</label>
+                            <select id="ternak-tipe" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+                                <option value="Saya Ingin Menjual Ternak">Saya Ingin MENJUAL Ternak ke Subur Makmur</option>
+                                <option value="Saya Ingin Membeli Ternak">Saya Ingin MEMBELI Ternak dari Subur Makmur</option>
+                            </select>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Jenis Ternak</label>
+                                <select id="ternak-jenis" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+                                    <option value="Sapi (Limusin/Simental/PO)">Sapi</option>
+                                    <option value="Kambing / Domba">Kambing / Domba</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Jumlah (Ekor)</label>
+                                <input type="number" id="ternak-ekor" required min="1" value="1" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Nama Lengkap & Alamat</label>
+                            <input type="text" id="ternak-nama" required placeholder="Nama Anda & Kota/Kecamatan" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Nomor WhatsApp</label>
+                            <input type="tel" id="ternak-hp" required placeholder="08xxxxxxxxxx" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+                        </div>
+                        <button type="submit" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-2.5 rounded-xl transition shadow flex items-center justify-center">
+                            <i class="fa-brands fa-whatsapp text-lg mr-2"></i> Konsultasi Ternak via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= SECTION 5: PUSAT EDUKASI & TUTORIAL ================= -->
+        <section id="sec-edukasi" class="hidden py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="text-center max-w-2xl mx-auto">
+                <span class="bg-blue-100 text-blue-700 font-bold text-xs uppercase px-3 py-1 rounded-full">Pusat Edukasi & Bimbingan</span>
+                <h1 class="text-3xl font-extrabold text-gray-900 mt-2">Tutorial Pertanian & Peternakan</h1>
+                <p class="text-sm text-gray-500 mt-1">Panduan praktis dosis obat, pemeliharaan benih, dan teknik pembuatan pakan fermentasi molase.</p>
+            </div>
+
+            <!-- Tab Navigation Edukasi -->
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card Edukasi 1: Aplikasi Obat -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition">
+                    <div class="h-44 bg-agri-900 relative flex items-center justify-center text-white">
+                        <div class="text-center p-4">
+                            <i class="fa-solid fa-circle-play text-4xl text-amber-400 mb-2"></i>
+                            <h4 class="font-bold text-sm">Video Tutorial Aplikasi Obat</h4>
+                        </div>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <span class="text-xs font-bold text-agri-600 uppercase">Obat Pertanian</span>
+                        <h3 class="font-bold text-gray-900">Cara Pencampuran & Dosis Efektif Herbisida Bablas & Gramaxone</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed">Panduan takaran ml per tangki 16 Liter agar gulma mati tuntas tanpa merusak tanah pertanian Anda.</p>
+                        <button onclick="openModalArticle('Aplikasi Herbisida', 'Gunakan takaran 50-80ml Herbisida per 16 Liter air. Semprotkan saat pagi hari setelah embun kering agar penyerapan optimal oleh daun gulma.')" class="text-xs font-bold text-agri-700 hover:underline pt-2 block">
+                            Baca Selengkapnya <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card Edukasi 2: Fermentasi Molase -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition">
+                    <div class="h-44 bg-amber-900 relative flex items-center justify-center text-white">
+                        <div class="text-center p-4">
+                            <i class="fa-solid fa-flask text-4xl text-amber-300 mb-2"></i>
+                            <h4 class="font-bold text-sm">Tutorial Pakan Peternakan</h4>
+                        </div>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <span class="text-xs font-bold text-amber-600 uppercase">Peternakan</span>
+                        <h3 class="font-bold text-gray-900">Menggunakan Tetes Tebu (Molase) untuk Fermentasi Jerami Sapi</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed">Meningkatkan nafsu makan sapi & kambing serta menghemat biaya pakan dengan teknik silase terbukti.</p>
+                        <button onclick="openModalArticle('Tutorial Molase', 'Campurkan 1 Liter Tetes Tebu Molase dengan 10 Liter air dan probiotik. Siramkan merata pada 100kg jerami atau rumput gajah tercacah, lalu simpan kedap udara selama 14 hari.')" class="text-xs font-bold text-amber-700 hover:underline pt-2 block">
+                            Baca Selengkapnya <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card Edukasi 3: Perawatan Benih Jagung -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition">
+                    <div class="h-44 bg-emerald-900 relative flex items-center justify-center text-white">
+                        <div class="text-center p-4">
+                            <i class="fa-solid fa-seedling text-4xl text-emerald-300 mb-2"></i>
+                            <h4 class="font-bold text-sm">Tips Benih Hibrida</h4>
+                        </div>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <span class="text-xs font-bold text-emerald-600 uppercase">Budidaya Tanam</span>
+                        <h3 class="font-bold text-gray-900">Perlakuan Benih Jagung Bisi 18 & Pioneer Agar Bebas Bulai</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed">Langkah awal merendam benih dengan fungisida pelindung sebelum ditanam di musim penghujan.</p>
+                        <button onclick="openModalArticle('Tips Benih Jagung', 'Gunakan Fungisida Dennis atau Cabrio secukupnya saat perendaman benih 2-4 jam sebelum tanam untuk mencegah penyakit bulai dan layu fusarium pada bibit muda.')" class="text-xs font-bold text-emerald-700 hover:underline pt-2 block">
+                            Baca Selengkapnya <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= SECTION 6: TENTANG KAMI & KONTAK ================= -->
+        <section id="sec-tentang" class="hidden py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 space-y-6">
+                <div class="max-w-3xl space-y-4">
+                    <span class="bg-agri-100 text-agri-800 text-xs font-bold uppercase px-3 py-1 rounded-full">Profil Usaha</span>
+                    <h1 class="text-3xl font-extrabold text-agri-900">SUBUR MAKMUR Agriculture & Cattle</h1>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        SUBUR MAKMUR adalah penyedia terintegrasi untuk kebutuhan sarana produksi hulu pertanian (benih original, herbisida, insektisida, pupuk, ZPT) serta pengolahan hasil tani dan peternakan hilir (jual/beli padi, jagung, sapi, & kambing). Kami berkomitmen mendukung ketahanan pangan dan kesejahteraan petani & peternak lokal.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 pt-4 border-t border-gray-100">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 bg-agri-50 text-agri-700 rounded-xl flex items-center justify-center text-lg font-bold">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-sm">Alamat Toko & Gudang</h4>
+                            <p class="text-xs text-gray-500 mt-1">Jl. Raya Pertanian Utama No. 45, Kawasan Sentra Tani & Peternakan, Indonesia</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 bg-agri-50 text-agri-700 rounded-xl flex items-center justify-center text-lg font-bold">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-sm">WhatsApp Admin Transaksi</h4>
+                            <p class="text-xs text-gray-500 mt-1">+62 857-7634-7786 (Respon Cepat)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 bg-agri-50 text-agri-700 rounded-xl flex items-center justify-center text-lg font-bold">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-sm">Jam Operasional</h4>
+                            <p class="text-xs text-gray-500 mt-1">Senin - Sabtu: 07.00 - 17.00 WIB<br>Minggu: 08.00 - 15.00 WIB</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SHOPPING CART DRAWER / MODAL -->
+    <div id="cart-drawer-overlay" class="fixed inset-0 bg-black/50 z-50 hidden transition-opacity" onclick="toggleCartDrawer(false)"></div>
+    <div id="cart-drawer" class="fixed right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
+        <!-- Drawer Header -->
+        <div class="p-4 bg-agri-900 text-white flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-basket-shopping text-amber-400 text-xl"></i>
+                <h3 class="font-bold text-lg">Keranjang Belanja</h3>
+            </div>
+            <button onclick="toggleCartDrawer(false)" class="text-gray-300 hover:text-white p-1">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Drawer Cart Items list -->
+        <div id="cart-items-container" class="flex-grow overflow-y-auto p-4 space-y-3 custom-scrollbar">
+            <!-- Dynamically populated or empty message -->
+        </div>
+
+        <!-- Drawer Footer -->
+        <div class="p-4 bg-gray-50 border-t border-gray-200 space-y-3">
+            <div class="flex justify-between items-center text-base font-bold text-gray-900">
+                <span>Total Belanja:</span>
+                <span id="cart-total-price" class="text-agri-700 text-lg">Rp 0</span>
+            </div>
+            <button onclick="checkoutToWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl shadow-md transition flex items-center justify-center space-x-2">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>Hubungi Admin via WhatsApp / Transaksi</span>
+            </button>
+            <p class="text-[10px] text-center text-gray-400">Pesanan akan langsung diformat dan dikirim ke Admin toko Subur Makmur</p>
+        </div>
+    </div>
+
+    <!-- Article Info Modal -->
+    <div id="article-modal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 space-y-4 shadow-2xl relative">
+            <button onclick="closeModalArticle()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <h3 id="modal-title" class="text-xl font-bold text-agri-900"></h3>
+            <p id="modal-content" class="text-sm text-gray-600 leading-relaxed"></p>
+            <div class="text-right pt-2">
+                <button onclick="closeModalArticle()" class="bg-agri-700 text-white text-xs font-bold px-4 py-2 rounded-lg">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-agri-900 text-white py-12 mt-12 border-t-4 border-amber-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="space-y-3">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-amber-400 rounded-full flex items-center justify-center text-agri-950 font-bold text-xl shadow">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <div>
+                        <span class="font-black text-white text-xl tracking-tight block leading-tight">SUBUR MAKMUR</span>
+                        <span class="text-[10px] font-bold text-amber-300 tracking-widest block uppercase">Agriculture & Cattle</span>
+                    </div>
+                </div>
+                <p class="text-xs text-agri-100/90 leading-relaxed pt-1">
+                    Pusat penyedia sarana produksi pertanian & peternakan terlengkap. Benih original, herbisida terpercaya, obat hama, & penampungan panen terintegrasi.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-extrabold text-amber-300 text-sm mb-4 uppercase tracking-wider flex items-center">
+                    <i class="fa-solid fa-leaf mr-2 text-xs"></i> Kategori Hulu
+                </h4>
+                <ul class="text-xs space-y-2.5 font-medium text-agri-100">
+                    <li><a href="#" onclick="filterCatalog('benih'); showSection('katalog');" class="hover:text-amber-300 hover:underline flex items-center"><i class="fa-solid fa-chevron-right text-[9px] mr-2 text-amber-400"></i> Benih & Bibit Pertanian</a></li>
+                    <li><a href="#" onclick="filterCatalog('herbisida'); showSection('katalog');" class="hover:text-amber-300 hover:underline flex items-center"><i class="fa-solid fa-chevron-right text-[9px] mr-2 text-amber-400"></i> Herbisida Pembasmi Rumput</a></li>
+                    <li><a href="#" onclick="filterCatalog('pestisida'); showSection('katalog');" class="hover:text-amber-300 hover:underline flex items-center"><i class="fa-solid fa-chevron-right text-[9px] mr-2 text-amber-400"></i> Insektisida & Fungisida</a></li>
+                    <li><a href="#" onclick="filterCatalog('pupuk'); showSection('katalog');" class="hover:text-amber-300 hover:underline flex items-center"><i class="fa-solid fa-chevron-right text-[9px] mr-2 text-amber-400"></i> Pupuk, ZPT & Molase</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-extrabold text-amber-300 text-sm mb-4 uppercase tracking-wider flex items-center">
+                    <i class="fa-solid fa-handshake mr-2 text-xs"></i> Layanan Hilir
+                </h4>
+                <ul class="text-xs space-y-2.5 font-medium text-agri-100">
+                    <li><a href="#" onclick="showSection('hilir-padi')" class="hover:text-amber-300 hover:underline flex items-center"><i class="fa-solid fa-chevron-right text-[9px] mr-2 text-amber-400"></i> Jual / Beli Padi & Gabah</a></li>
+                    <li><a href="#" onclick="showSection('hilir-padi')" class="hover:text-amber-300 hover:underline flex items-center"><i class="fa-solid fa-chevron-right text-[9px] mr-2 text-amber-400"></i> Jual / Beli Jagung Kering</a></li>
+                    <li><a href="#" onclick="showSection('hilir-ternak')" class="hover:text-amber-300 hover:underline flex items-center"><i class="fa-solid fa-chevron-right text-[9px] mr-2 text-amber-400"></i> Jual / Beli Sapi Qurban & Bakalan</a></li>
+                    <li><a href="#" onclick="showSection('hilir-ternak')" class="hover:text-amber-300 hover:underline flex items-center"><i class="fa-solid fa-chevron-right text-[9px] mr-2 text-amber-400"></i> Jual / Beli Kambing & Domba</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-extrabold text-amber-300 text-sm mb-4 uppercase tracking-wider flex items-center">
+                    <i class="fa-solid fa-headset mr-2 text-xs"></i> Kontak Fast Response
+                </h4>
+                <div class="space-y-2 text-xs text-agri-100 font-medium">
+                    <p class="flex items-center">
+                        <i class="fa-brands fa-whatsapp text-green-400 text-base mr-2 w-4"></i> WhatsApp: <span class="font-bold text-white ml-1">0857-7634-7786</span>
+                    </p>
+                    <p class="flex items-center">
+                        <i class="fa-solid fa-envelope text-amber-300 text-sm mr-2 w-4"></i> Email: <span class="font-bold text-white ml-1">admin@suburmakmur.co.id</span>
+                    </p>
+                    <p class="flex items-center pt-1">
+                        <i class="fa-solid fa-location-dot text-amber-400 text-sm mr-2 w-4"></i> Sentra Tani & Peternakan Utama
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 mt-8 pt-6 border-t border-agri-800 text-center text-xs font-medium text-agri-200">
+            &copy; SUBUR MAKMUR Agriculture & Cattle. Hak Cipta Dilindungi Undang-Undang.
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC & STATE MANAGEMENT -->
+    <script>
+// DATA PRODUK SUBUR MAKMUR
+// Folder gambar 'images/' harus berada sejajar dengan file HTML
+const rawProducts = [
+
+    // 1. Benih & Bibit Pertanian
+    { id: 1, name: "Mapan 05 Original", price: 175000, category: "benih", image: "images/mapan-05-original.png" },
+    { id: 2, name: "Benih Kacang Hibrida", price: 36000, category: "benih", image: "images/benih-kacang-hibrida.png" },
+    { id: 3, name: "Timun Semi", price: 62000, category: "benih", image: "images/timun-semi.png" },
+    { id: 4, name: "Benih Terong Pipit Mutiara Bumi", price: 25000, category: "benih", image: "images/benih-terong-pipit-mutiara-bumi.png" },
+    { id: 5, name: "Pare Lipa Isi 50", price: 49990, category: "benih", image: "images/pare-lipa-isi-50.png" },
+    { id: 6, name: "IGGO TAVI F1", price: 185000, category: "benih", image: "images/iggo-tavi-f1.png" },
+    { id: 7, name: "Cabai Iggo Tavi", price: 210000, category: "benih", image: "images/cabai-iggo-tavi.png" },
+    { id: 8, name: "TALENTA F1 Benih Jagung Manis", price: 100000, category: "benih", image: "images/talenta-f1-benih-jagung-manis.png" },
+    { id: 9, name: "EXSOTIC F1 Benih Jagung Manis", price: 115000, category: "benih", image: "images/exsotic-f1-benih-jagung-manis.png" },
+    { id: 10, name: "SIOS TAVI F1 Benih Cabai Keriting Cap Kapal Terbang (Tahan Virus Gemini, Layu)", price: 170000, category: "benih", image: "images/sios-tavi-f1-benih-cabai-keriting-cap-kapal-terbang.png" },
+    { id: 11, name: "Benih Tomat Corona Antivirus", price: 185000, category: "benih", image: "images/benih-tomat-corona-antivirus.png" },
+    { id: 12, name: "BOOS TAVI F1", price: 200000, category: "benih", image: "images/boos-tavi-f1.png" },
+    { id: 13, name: "Benih Tomat Servo F1", price: 228000, category: "benih", image: "images/benih-tomat-servo-f1.png" },
+    { id: 14, name: "Kacang Guarda", price: 165000, category: "benih", image: "images/kacang-guarda.png" },
+    { id: 15, name: "Gajah P27 Pioner", price: 125000, category: "benih", image: "images/gajah-p27-pioner.png" },
+    { id: 16, name: "NB Super F1", price: 123000, category: "benih", image: "images/nb-super-f1.png" },
+    { id: 17, name: "Benih Jagung Bisi 2", price: 78000, category: "benih", image: "images/benih-jagung-bisi-2.png" },
+    { id: 18, name: "Terong Prince 10 gr", price: 90000, category: "benih", image: "images/terong-prince-10-gr.png" },
+    { id: 19, name: "Benih Jagung Bisi 18", price: 120000, category: "benih", image: "images/benih-jagung-bisi-18.png" },
+
+    // 2. Herbisida
+    { id: 20, name: "Bablas 1 Liter", price: 59000, category: "herbisida", image: "images/bablas-1-liter.png" },
+    { id: 21, name: "Gramaxone 1 Liter", price: 75000, category: "herbisida", image: "images/gramaxone-1-liter.png" },
+    { id: 22, name: "Sidafos 1L", price: 65000, category: "herbisida", image: "images/sidafos.png" },
+    { id: 23, name: "Roger Herbisida 1 Liter", price: 67288, category: "herbisida", image: "images/roger-herbisida-1-liter.png" },
+    { id: 24, name: "AMEGRASS 500SC 1 Liter", price: 120000, category: "herbisida", image: "images/amegrass-500sc-1-liter.png" },
+    { id: 25, name: "AMEGRASS 80WP 500gram", price: 99000, category: "herbisida", image: "images/amegrass-80wp-500gram.png" },
+    { id: 26, name: "Gramaxone 500ml", price: 57000, category: "herbisida", image: "images/gramaxone-500ml.png" },
+    { id: 27, name: "Broadplus", price: 12000, category: "herbisida", image: "images/broadplus.png" },
+    { id: 28, name: "Sidastar 1 Liter", price: 65000, category: "herbisida", image: "images/sidastar-1-liter.png" },
+    { id: 29, name: "Herbisida Novlect 500ml", price: 400000, category: "herbisida", image: "images/herbisida-novlect-500ml.png" },
+    { id: 30, name: "Roundup 200ml", price: 35000, category: "herbisida", image: "images/roundup-200ml.png" },
+    { id: 31, name: "Roundup 1 Liter", price: 130000, category: "herbisida", image: "images/roundup-1-liter.png" },
+
+    // 3. Insektisida, Fungisida & Pestisida
+    { id: 32, name: "Fungisida Dennis", price: 50000, category: "pestisida", image: "images/fungisida-dennis.png" },
+    { id: 33, name: "Kudix Spray", price: 22000, category: "pestisida", image: "images/kudix-spray.png" },
+    { id: 34, name: "Lannate Merah", price: 4500, category: "pestisida", image: "images/lannate-merah.png" },
+    { id: 35, name: "CABRIO 250 EC 100ml", price: 95000, category: "pestisida", image: "images/cabrio-250-ec-100ml.png" },
+    { id: 36, name: "CABRIO 250 EC 250 Ml", price: 204000, category: "pestisida", image: "images/cabrio-250-ec-250-ml.png" },
+    { id: 37, name: "Avidor Insektisida", price: 25000, category: "pestisida", image: "images/avidor-insektisida.png" },
+    { id: 38, name: "Dangke Insektisida", price: 25000, category: "pestisida", image: "images/dangke-insektisida.png" },
+
+    // 4. Pupuk, ZPT & Pelengkap
+    { id: 39, name: "Sampurna B", price: 1500, category: "pupuk", image: "images/sampurna-b.png" },
+    { id: 40, name: "Sampurna D 100gr", price: 1500, category: "pupuk", image: "images/sampurna-d-100gr.png" },
+    { id: 41, name: "Sampurna B dan Sampurna D Paket", price: 7000, category: "pupuk", image: "images/sampurna-b-dan-sampurna-d.png" },
+    { id: 42, name: "Gibgro ZPT", price: 5000, category: "pupuk", image: "images/gibgro.png" },
+    { id: 43, name: "NPK Cap Tawon", price: 2000, category: "pupuk", image: "images/npk-cap-tawon.png" },
+    { id: 44, name: "Boom Flower", price: 55000, category: "pupuk", image: "images/boom-flower.png" },
+    { id: 45, name: "Tetes Tebu / Molase (Pakan & Olah Tanah)", price: 15000, category: "pupuk", image: "images/tetes-tebu-molase.png" },
+
+    // 5. Produk Lainnya (Umum / Rumah Tangga)
+    { id: 46, name: "Softener Pewangi Pakaian", price: 25000, category: "lainnya", image: "images/softener-pewangi-pakaian.png" },
+    { id: 47, name: "Softener Laundry", price: 12000, category: "lainnya", image: "images/softener-laundry.png" },
+    { id: 48, name: "Cuci Piring Top Cling", price: 8000, category: "lainnya", image: "images/cuci-piring-top-cling.png" },
+    { id: 49, name: "Porselin Top Cling", price: 25000, category: "lainnya", image: "images/porselin-top-cling.png" },
+    { id: 50, name: "You C Rasa Orange", price: 12000, category: "lainnya", image: "images/you-c-rasa-orange.png" }
+];
+
+        // Global State
+        let cart = [];
+        let currentCategory = 'all';
+
+        // Helper: Deteksi Perangkat Mobile
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        // Format currency helper
+        function formatRupiah(number) {
+            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(number);
+        }
+
+        // Initialize App
+        window.onload = function() {
+            renderFeaturedProducts();
+            renderCatalogProducts(rawProducts);
+            updateCartUI();
+
+            // Set initial state untuk penanganan tombol Back di HP
+            history.replaceState({ section: 'home', cartOpen: false }, '', '');
+        };
+
+        // Event Listener untuk Tombol Back di Perangkat Mobile
+        window.onpopstate = function(event) {
+            const drawer = document.getElementById('cart-drawer');
+            // Jika drawer keranjang belanja terbuka saat tombol back dipencet, tutup drawer dulu
+            if (drawer && !drawer.classList.contains('translate-x-full')) {
+                toggleCartDrawer(false, false);
+                return;
+            }
+
+            if (event.state && event.state.section) {
+                showSection(event.state.section, false);
+            }
+        };
+
+        // Navigation Controller
+        function showSection(sectionId, pushHistory = true) {
+            const sections = ['home', 'katalog', 'hilir-padi', 'hilir-ternak', 'edukasi', 'tentang'];
+            sections.forEach(sec => {
+                const el = document.getElementById(`sec-${sec}`);
+                if(el) el.classList.add('hidden');
+            });
+
+            const target = document.getElementById(`sec-${sectionId}`);
+            if(target) target.classList.remove('hidden');
+
+            if (pushHistory) {
+                history.pushState({ section: sectionId, cartOpen: false }, '', '');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Render Featured Products (Home)
+        function renderFeaturedProducts() {
+            const featuredIds = [1, 8, 20, 31, 35, 45, 10, 21];
+            const featuredList = rawProducts.filter(p => featuredIds.includes(p.id));
+            const grid = document.getElementById('featured-products-grid');
+            grid.innerHTML = featuredList.map(p => createProductCardHTML(p)).join('');
+        }
+
+        // Catalog Filter & Search Logic
+        function filterCatalog(category, type = '') {
+            currentCategory = category;
+
+            document.querySelectorAll('.cat-tab-btn').forEach(btn => {
+                btn.classList.remove('bg-agri-700', 'text-white');
+                btn.classList.add('bg-gray-100', 'text-gray-600');
+            });
+
+            const activeBtn = document.getElementById(`btn-cat-${category}`);
+            if(activeBtn) {
+                activeBtn.classList.remove('bg-gray-100', 'text-gray-600');
+                activeBtn.classList.add('bg-agri-700', 'text-white');
+            }
+
+            let filtered = rawProducts;
+            if(category !== 'all') {
+                filtered = rawProducts.filter(p => p.category === category);
+            }
+
+            renderCatalogProducts(filtered);
+        }
+
+        function handleSearch() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            let filtered = rawProducts;
+            if (currentCategory !== 'all') {
+                filtered = filtered.filter(p => p.category === currentCategory);
+            }
+            filtered = filtered.filter(p => p.name.toLowerCase().includes(query));
+            renderCatalogProducts(filtered);
+        }
+
+        function renderCatalogProducts(products) {
+            const grid = document.getElementById('catalog-products-grid');
+            const noMsg = document.getElementById('no-product-msg');
+
+            if(products.length === 0) {
+                grid.innerHTML = '';
+                noMsg.classList.remove('hidden');
+            } else {
+                noMsg.classList.add('hidden');
+                grid.innerHTML = products.map(p => createProductCardHTML(p)).join('');
+            }
+        }
+
+        // Reusable HTML Product Card
+        function createProductCardHTML(product) {
+            return `
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col overflow-hidden group">
+                    <div class="relative overflow-hidden bg-gray-100">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://placehold.co/400x300/15803d/ffffff?text=Produk+Pertanian'">
+                        <span class="absolute top-2 left-2 bg-agri-800/80 text-white text-[10px] uppercase font-bold px-2 py-0.5 rounded-md backdrop-blur-sm">
+                            ${product.category}
+                        </span>
+                    </div>
+                    <div class="p-3 sm:p-4 flex flex-col flex-grow justify-between space-y-3">
+                        <div>
+                            <h3 class="font-bold text-gray-900 text-xs sm:text-sm line-clamp-2 hover:text-agri-700 transition" title="${product.name}">
+                                ${product.name}
+                            </h3>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="text-sm sm:text-base font-black text-agri-700">
+                                ${formatRupiah(product.price)}
+                            </div>
+                            <div class="grid grid-cols-5 gap-1.5 pt-1">
+                                <button onclick="addToCart(${product.id})" class="col-span-4 bg-agri-600 hover:bg-agri-700 text-white font-bold text-xs py-2 rounded-xl transition flex items-center justify-center space-x-1">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                    <span>+ Keranjang</span>
+                                </button>
+                                <button onclick="quickBuyWhatsApp('${product.name}', ${product.price})" class="col-span-1 bg-emerald-100 hover:bg-emerald-200 text-emerald-800 rounded-xl transition flex items-center justify-center" title="Beli Langsung via WA">
+                                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // SHOPPING CART LOGIC (FIXED BUG KOSONGKAN KERANJANG)
+        function addToCart(productId) {
+            const product = rawProducts.find(p => p.id === productId);
+            if(!product) return;
+
+            const existing = cart.find(item => item.id === productId);
+            if(existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+
+            updateCartUI();
+            toggleCartDrawer(true);
+        }
+
+        function updateCartQty(productId, change) {
+            const itemIndex = cart.findIndex(i => i.id === productId);
+            if(itemIndex !== -1) {
+                cart[itemIndex].qty += change;
+                if(cart[itemIndex].qty <= 0) {
+                    cart.splice(itemIndex, 1); // Hapus item jika qty <= 0
+                }
+            }
+            updateCartUI();
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(i => i.id !== productId);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+            const cartCountEl = document.getElementById('cart-count');
+            if (cartCountEl) cartCountEl.innerText = totalCount;
+
+            const container = document.getElementById('cart-items-container');
+            const totalPriceEl = document.getElementById('cart-total-price');
+
+            if(!container) return;
+
+            // FIX: Render pesan kosong secara konsisten tanpa merusak DOM
+            if(cart.length === 0) {
+                container.innerHTML = `
+                    <div id="cart-empty-msg" class="text-center py-12 text-gray-400">
+                        <i class="fa-solid fa-cart-arrow-down text-5xl mb-3 text-gray-300"></i>
+                        <p class="font-semibold text-gray-500">Keranjang masih kosong</p>
+                        <p class="text-xs mt-1">Pilih benih atau obat pertanian dari katalog untuk menambahkan.</p>
+                    </div>
+                `;
+                if(totalPriceEl) totalPriceEl.innerText = formatRupiah(0);
+                return;
+            }
+
+            let totalSum = 0;
+            let itemsHTML = '';
+
+            cart.forEach(item => {
+                const subtotal = item.price * item.qty;
+                totalSum += subtotal;
+
+                itemsHTML += `
+                    <div class="flex items-center justify-between bg-gray-50 p-3 rounded-xl border border-gray-200">
+                        <div class="flex-grow pr-2">
+                            <h4 class="font-bold text-xs text-gray-900 line-clamp-1">${item.name}</h4>
+                            <span class="text-xs text-agri-700 font-semibold">${formatRupiah(item.price)}</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="flex items-center border border-gray-300 rounded-lg bg-white">
+                                <button onclick="updateCartQty(${item.id}, -1)" class="px-2 py-0.5 text-xs text-gray-600 hover:bg-gray-100 font-bold">-</button>
+                                <span class="px-2 text-xs font-bold text-gray-800">${item.qty}</span>
+                                <button onclick="updateCartQty(${item.id}, 1)" class="px-2 py-0.5 text-xs text-gray-600 hover:bg-gray-100 font-bold">+</button>
+                            </div>
+                            <button onclick="removeFromCart(${item.id})" class="text-red-500 hover:text-red-700 text-xs p-1">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = itemsHTML;
+            if(totalPriceEl) totalPriceEl.innerText = formatRupiah(totalSum);
+        }
+
+        // Toggle Drawer Keranjang Belanja dengan Dukungan Navigation History HP
+        function toggleCartDrawer(openForce = null, pushHistory = true) {
+            const drawer = document.getElementById('cart-drawer');
+            const overlay = document.getElementById('cart-drawer-overlay');
+            if(!drawer || !overlay) return;
+
+            const isCurrentlyClosed = drawer.classList.contains('translate-x-full');
+            const shouldOpen = openForce !== null ? openForce : isCurrentlyClosed;
+
+            if (shouldOpen) {
+                drawer.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+                if (pushHistory) {
+                    history.pushState({ cartOpen: true }, '', '');
+                }
+            } else {
+                drawer.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+            }
+        }
+
+        // FIX BUG BACK DI HP SAAT ORDER WHATSAPP
+        function openWhatsAppLink(url) {
+            if (isMobileDevice()) {
+                window.location.href = url; // Gunakan navigasi biasa untuk HP agar tombol back tidak keluar dari web
+            } else {
+                window.open(url, '_blank');
+            }
+        }
+
+        // WhatsApp Order Format
+        function checkoutToWhatsApp() {
+            if(cart.length === 0) {
+                alert('Keranjang belanja Anda masih kosong.');
+                return;
+            }
+
+            const waNum = "6285776347786";
+            let message = "*PESANAN BARU - SUBUR MAKMUR AGRICULTURE & CATTLE*\n\n";
+            message += "Halo Admin Subur Makmur, saya ingin memesan produk berikut:\n\n";
+
+            let grandTotal = 0;
+            cart.forEach((item, index) => {
+                const subtotal = item.price * item.qty;
+                grandTotal += subtotal;
+                message += `${index + 1}. *${item.name}*\n   Qty: ${item.qty} x ${formatRupiah(item.price)} = ${formatRupiah(subtotal)}\n`;
+            });
+
+            message += `\n*TOTAL PEMBAYARAN:* ${formatRupiah(grandTotal)}\n\n`;
+            message += "Mohon diinformasikan ketersediaan stok & petunjuk pembayarannya. Terima kasih!";
+
+            const url = `https://wa.me/${waNum}?text=${encodeURIComponent(message)}`;
+            openWhatsAppLink(url);
+        }
+
+        function quickBuyWhatsApp(productName, price) {
+            const waNum = "6285776347786";
+            let message = `Halo Admin Subur Makmur, saya mau beli langsung:\n\n*${productName}* - ${formatRupiah(price)}\n\nApakah stok ready?`;
+            const url = `https://wa.me/${waNum}?text=${encodeURIComponent(message)}`;
+            openWhatsAppLink(url);
+        }
+
+        // Form Handlers (Hasil Tani & Ternak Hilir)
+        function submitFormPanen(e) {
+            e.preventDefault();
+            const nama = document.getElementById('panen-nama').value;
+            const komoditas = document.getElementById('panen-komoditas').value;
+            const jumlah = document.getElementById('panen-jumlah').value;
+            const lokasi = document.getElementById('panen-lokasi').value;
+            const hp = document.getElementById('panen-hp').value;
+
+            const text = `*PENAWARAN HASIL TANI (HILIR)*\n\nNama: ${nama}\nKomoditas: ${komoditas}\nJumlah Panen: ${jumlah}\nLokasi: ${lokasi}\nNo WA: ${hp}\n\nHalo Admin Subur Makmur, saya ingin mengajukan penjualan hasil panen di atas.`;
+            const url = `https://wa.me/6285776347786?text=${encodeURIComponent(text)}`;
+            openWhatsAppLink(url);
+        }
+
+        function submitFormTernak(e) {
+            e.preventDefault();
+            const tipe = document.getElementById('ternak-tipe').value;
+            const jenis = document.getElementById('ternak-jenis').value;
+            const ekor = document.getElementById('ternak-ekor').value;
+            const nama = document.getElementById('ternak-nama').value;
+            const hp = document.getElementById('ternak-hp').value;
+
+            const text = `*PENGAJUAN TRANSAKSI TERNAK*\n\nTipe: ${tipe}\nJenis Ternak: ${jenis}\nJumlah: ${ekor} Ekor\nNama & Alamat: ${nama}\nNo WA: ${hp}\n\nHalo Admin Subur Makmur, mohon informasi lebih lanjut mengenai pengajuan ternak ini.`;
+            const url = `https://wa.me/6285776347786?text=${encodeURIComponent(text)}`;
+            openWhatsAppLink(url);
+        }
+
+        // Educational Modal Handler
+        function openModalArticle(title, content) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-content').innerText = content;
+            document.getElementById('article-modal').classList.remove('hidden');
+        }
+
+        function closeModalArticle() {
+            document.getElementById('article-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
